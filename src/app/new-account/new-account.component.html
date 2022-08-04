@@ -1,0 +1,22 @@
+
+    <label>Account Name</label>
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        placeholder=""
+        type="text"
+        #accountName>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-select
+        placeholder=""
+        #statusOption>
+        <mat-option *ngFor="let s of status" [value]="s.value">
+          {{ s.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
