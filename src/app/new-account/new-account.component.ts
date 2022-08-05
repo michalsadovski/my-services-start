@@ -16,8 +16,11 @@ export class NewAccountComponent implements OnInit {
   }
 
   addAccount(accountName: string, statusName: string) {
-    this.accountToAdd.emit({name: accountName, status: statusName});
-    // this.accounts.push({name: accountName.value, status: statusName.value});
+    this.accountToAdd.emit({
+      name: accountName,
+      status: statusName
+    });
+    console.log('A server status changed to: ' + statusName)
   }
 
 }
