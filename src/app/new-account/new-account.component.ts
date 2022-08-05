@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-new-account',
@@ -6,15 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-account.component.css']
 })
 export class NewAccountComponent implements OnInit {
-  status = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
+
+  @Output()
+  accountToAdd = new EventEmitter<{ name: string; status: string; }>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addAccount(accountName: string, statusName: string) {
+    this.accountToAdd.emit({name: accountName, status: statusName});
+    // this.accounts.push({name: accountName.value, status: statusName.value});
   }
 
 }

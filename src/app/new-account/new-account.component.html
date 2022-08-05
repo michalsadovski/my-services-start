@@ -1,4 +1,5 @@
-
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
     <label>Account Name</label>
     <mat-form-field class="example-full-width">
       <input
@@ -8,15 +9,17 @@
         #accountName>
     </mat-form-field>
     <br>
-    <mat-form-field>
-      <mat-select
-        placeholder=""
-        #statusOption>
-        <mat-option *ngFor="let s of status" [value]="s.value">
-          {{ s.viewValue }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-
-
-
+    <div class="form-group">
+      <label>
+        <select class="form-control" #statusOption>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+          <option value="hidden">Hidden</option>
+        </select>
+      </label>
+    </div>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary" (click)="addAccount(accountName.value, statusOption.value)">Add account</button>
+    </div>
+  </div>
+</div>
