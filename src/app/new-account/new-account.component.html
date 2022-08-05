@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <label>Account Name</label>
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        placeholder=""
+        type="text"
+        #accountName>
+    </mat-form-field>
+    <br>
+    <div class="form-group">
+      <label>
+        <select class="form-control" #statusOption>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+          <option value="hidden">Hidden</option>
+        </select>
+      </label>
+    </div>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary" (click)="addAccount(accountName.value, statusOption.value)">Add account</button>
+    </div>
+  </div>
+</div>
